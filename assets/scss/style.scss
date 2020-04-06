@@ -6,10 +6,6 @@ $theme-colors: (primary: $primary);
 $fa-font-path : "../fonts/fontawesome";
 
 @import "../plugins/bootstrap4/scss/bootstrap";
-@import "../plugins/fontawesome5/scss/fontawesome.scss";
-@import "../plugins/fontawesome5/scss/regular.scss";
-@import "../plugins/fontawesome5/scss/brands.scss";
-@import "../plugins/fontawesome5/scss/solid.scss";
 @import "fs";
 
 @font-face {
@@ -26,6 +22,7 @@ $fa-font-path : "../fonts/fontawesome";
 body {
     font-family: "poppins", sans-serif;
     width: 100%;
+    min-height: 100vh;
     background-color: $white;
 }
 
@@ -64,14 +61,211 @@ label {
     clear: both;
 }
 
+.sidebar {
+    height: 100%;
+    width: 280px;
+    padding: 0;
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    left: -290px;
+    z-index: 2002;
+    transition: .3s;
+
+    &.active {
+        left: 0;
+    }
+
+    .sidebar-header {
+        font-size: 18px;
+        width: 100%;
+        padding: 15px;
+
+        .logo {
+            float: left;
+        }
+
+        .close-sidebar-toggle {
+            float: right;
+            font-size: 21px;
+            cursor: pointer;
+        }
+    }
+
+    .sidebar-profile {
+        padding: 15px;
+
+        .image {
+            height: 60px;
+            width: 60px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                height: 100%;
+                position: absolute;
+                margin: 0 auto;
+            }
+        }
+
+        .username {
+            font-size: 18px;
+            font-family: $poppins-semibold;
+            margin: 0;
+        }
+
+        .money {
+            font-size: 12px;
+            margin: 0;
+        }
+    }
+
+    ul.menu {
+        padding: 0 15px;
+        margin: 0;
+        list-style: none;
+        height: calc(100% - 65px - 153px - 29px);
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f5f5f5;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #dddddd;
+        }
+
+        li a {
+            display: inline-block;
+            text-decoration: none;
+            color: $black;
+            padding: 15px 0;
+            width: 100%;
+            text-transform: capitalize;
+            font-size: 16px;
+            line-height: 21px;
+
+            .icon {
+                font-size: 21px;
+                width: 30px;
+                display: inline-block;
+            }
+        }
+    }
+
+    .sidebar-footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+.close-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 2001;
+}
+
 .nav-bar {
     width: 100%;
-    padding: 15px 0;
-    background-color: $primary;
-    color: $white;
+    padding: 10px 0;
+    background-color: $white;
+    color: $black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    font-size: 18px;
 
-    .username {
-        float: right;
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sidebar-toggle,
+    .shop-toggle {
+        font-size: 21px;
+        cursor: pointer;
+        text-decoration: none;
+        color: $black;
+    }
+
+    .logo {
+        font-family: $poppins-semibold;
+    }
+
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    width: 100%;
+
+    .menu {
+        width: calc(100% / 5);
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 12px;
+
+        a {
+            display: inline;
+            color: $black;
+            text-decoration: none;
+            font-family: $poppins-semibold;
+            line-height: 1.2;
+
+            .icon {
+                display: block;
+                font-size: 24px;
+            }
+        }
+
+        &.active a {
+            color: $primary;
+        }
+
+        &.plus {
+            position: relative;
+
+            a {
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                background-color: $primary;
+                position: absolute;
+                top: -30px;
+                left: 50%;
+                font-size: 21px;
+                line-height: 60px;
+                font-weight: 100;
+                color: $white;
+                transform: translateX(-50%);
+            }
+
+            &.active a .icon {
+                transform: rotate(45deg);
+            }
+        }
     }
 }
 
@@ -131,67 +325,4 @@ label {
     }
 }
 
-.other-auth {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-
-
-    a {
-        color: $gray-600;
-        text-decoration: none;
-    }
-}
-
-body.auth {
-    min-height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-
-
-    .login-avatar {
-        width: 100%;
-        display: block;
-
-        img {
-            display: block;
-            height: 100px;
-            width: 100px;
-            margin: 0 auto;
-        }
-    }
-
-    h1 {
-        font-size: 31px;
-        font-weight: 400;
-        font-family: $poppins;
-    }
-
-    h2 {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    form {
-        margin-top: auto;
-
-        .button-action {
-            button {
-                margin-right: 10px;
-            }
-        }
-
-        @media (max-width: 325px) {
-            .button-action {
-                .btn {
-                    padding-left: 15px;
-                    padding-right: 15px;
-                }
-            }
-        }
-    }
-}
-
-@import "desktop";
+@import "auth";
