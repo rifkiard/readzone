@@ -10569,13 +10569,17 @@ label {
 .share-modal {
   max-width: 95%;
   position: fixed;
-  bottom: 15px;
+  bottom: -300px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;
   border-radius: 8px;
   padding: 15px 15px 0 15px;
-  z-index: 2004;
+  z-index: 30;
+  transition: 0.4s;
+}
+.share-modal.active {
+  bottom: 15px;
 }
 .share-modal .share-title {
   margin: 0 0 15px 0;
@@ -10587,14 +10591,14 @@ label {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 .share-modal .share-menu .share-menu-item {
   display: block;
   float: left;
   text-decoration: none;
   text-align: center;
-  margin: 0 10px 10px 10px;
+  margin: 0 5px 15px 5px;
   color: #fff;
   height: 40px;
   width: 40px;
@@ -10627,8 +10631,9 @@ label {
   left: 0;
   height: 100%;
   right: 0;
+  display: none;
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 2003;
+  z-index: 29;
 }
 
 .sidebar {
@@ -10639,7 +10644,7 @@ label {
   position: fixed;
   top: 0;
   left: -290px;
-  z-index: 2002;
+  z-index: 28;
   transition: 0.3s;
 }
 .sidebar.active {
@@ -10733,7 +10738,7 @@ label {
   right: 0;
   display: none;
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 2001;
+  z-index: 27;
 }
 
 .nav-bar {
@@ -10744,7 +10749,7 @@ label {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2000;
+  z-index: 26;
   font-size: 18px;
 }
 .nav-bar .wrapper {
@@ -10766,7 +10771,7 @@ label {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 2000;
+  z-index: 26;
   width: 100%;
 }
 .bottom-bar .menu {
@@ -10802,15 +10807,61 @@ label {
   background-color: #3742fa;
   position: absolute;
   top: -30px;
-  left: 50%;
-  font-size: 21px;
+  left: calc(50% - 30px);
   line-height: 60px;
   font-weight: 100;
   color: #fff;
-  transform: translateX(-50%);
+  transition: 0.3s;
 }
-.bottom-bar .menu.plus.active a .icon {
-  transform: rotate(45deg);
+.bottom-bar .menu.plus a .icon {
+  font-size: 28px;
+}
+.bottom-bar .menu.plus.active a {
+  transform: rotate(135deg);
+  transform-origin: center;
+}
+
+.modal-menu-plus {
+  position: fixed;
+  bottom: -502.5px;
+  left: calc(50% - 25px);
+  z-index: 25;
+  transition: 0.7s;
+}
+.modal-menu-plus.active {
+  bottom: 102.5px;
+}
+.modal-menu-plus ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.modal-menu-plus ul li {
+  margin: 15px 0;
+}
+.modal-menu-plus ul li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  height: 50px;
+}
+.modal-menu-plus ul li a .icon {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #3742fa;
+  border-radius: 50%;
+  font-size: 21px;
+}
+.modal-menu-plus ul li a .menu-title {
+  display: inline-block;
+  color: #000;
+  padding: 5px 10px;
+  margin: 0 0 0 10px;
+  border-radius: 8px;
+  font-size: 12px;
 }
 
 .form-group-default {
@@ -10863,6 +10914,11 @@ label {
   font-size: 14px;
 }
 
+@media (max-width: 767.98px) {
+  .share-modal {
+    width: 90%;
+  }
+}
 body.auth {
   min-height: 100vh;
   width: 100vw;

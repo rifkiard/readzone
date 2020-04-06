@@ -65,13 +65,18 @@ label {
 .share-modal {
     max-width: 95%;
     position: fixed;
-    bottom: 15px;
+    bottom: -300px;
     left: 50%;
     transform: translateX(-50%);
     background-color: $white;
     border-radius: 8px;
     padding: 15px 15px 0 15px;
-    z-index: 2004;
+    z-index: 30;
+    transition: .4s;
+
+    &.active {
+        bottom: 15px;
+    }
 
     .share-title {
         margin: 0 0 15px 0;
@@ -84,7 +89,7 @@ label {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
 
 
         .share-menu-item {
@@ -92,7 +97,7 @@ label {
             float: left;
             text-decoration: none;
             text-align: center;
-            margin: 0 10px 10px 10px;
+            margin: 0 5px 15px 5px;
             color: $white;
             height: 40px;
             width: 40px;
@@ -133,9 +138,9 @@ label {
     left: 0;
     height: 100%;
     right: 0;
-    // display: none;
+    display: none;
     background-color: rgba(0, 0, 0, .2);
-    z-index: 2003;
+    z-index: 29;
 }
 
 .sidebar {
@@ -146,7 +151,7 @@ label {
     position: fixed;
     top: 0;
     left: -290px;
-    z-index: 2002;
+    z-index: 28;
     transition: .3s;
 
     &.active {
@@ -256,7 +261,7 @@ label {
     right: 0;
     display: none;
     background-color: rgba(0, 0, 0, .2);
-    z-index: 2001;
+    z-index: 27;
 }
 
 .nav-bar {
@@ -267,7 +272,7 @@ label {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2000;
+    z-index: 26;
     font-size: 18px;
 
     .wrapper {
@@ -293,7 +298,7 @@ label {
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 2000;
+    z-index: 26;
     width: 100%;
 
     .menu {
@@ -332,16 +337,69 @@ label {
                 background-color: $primary;
                 position: absolute;
                 top: -30px;
-                left: 50%;
-                font-size: 21px;
+                left: calc(50% - 30px);
                 line-height: 60px;
                 font-weight: 100;
                 color: $white;
-                transform: translateX(-50%);
+                transition: .3s;
+
+                .icon {
+                    font-size: 28px;
+                }
             }
 
-            &.active a .icon {
-                transform: rotate(45deg);
+            &.active a {
+                transform: rotate(135deg);
+                transform-origin: center;
+            }
+        }
+    }
+}
+
+.modal-menu-plus {
+    position: fixed;
+    bottom: -502.5px;
+    left: calc(50% - 25px);
+    z-index: 25;
+    transition: .7s;
+
+    &.active {
+        bottom: 102.5px;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+            margin: 15px 0;
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: $white;
+                height: 50px;
+
+                .icon {
+                    display: inline-block;
+                    height: 50px;
+                    width: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    background-color: $primary;
+                    border-radius: 50%;
+                    font-size: 21px;
+                }
+
+                .menu-title {
+                    display: inline-block;
+                    color: $black;
+                    padding: 5px 10px;
+                    margin: 0 0 0 10px;
+                    border-radius: 8px;
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -400,6 +458,12 @@ label {
             outline: none;
             font-size: 14px;
         }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .share-modal {
+        width: 90%;
     }
 }
 
