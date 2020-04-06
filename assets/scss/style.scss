@@ -1,0 +1,197 @@
+$primary: #3742fa;
+$poppins-semibold : "poppins-semibold";
+$poppins : "poppins";
+
+$theme-colors: (primary: $primary);
+$fa-font-path : "../fonts/fontawesome";
+
+@import "../plugins/bootstrap4/scss/bootstrap";
+@import "../plugins/fontawesome5/scss/fontawesome.scss";
+@import "../plugins/fontawesome5/scss/regular.scss";
+@import "../plugins/fontawesome5/scss/brands.scss";
+@import "../plugins/fontawesome5/scss/solid.scss";
+@import "fs";
+
+@font-face {
+    font-family: $poppins;
+    src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: $poppins-semibold;
+    src: url('../fonts/poppins/Poppins-SemiBold.ttf');
+}
+
+
+body {
+    font-family: "poppins", sans-serif;
+    width: 100%;
+    background-color: $white;
+}
+
+label {
+    cursor: pointer;
+}
+
+.btn {
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bg-gray-100 {
+    background-color: $gray-100;
+}
+
+.bg-gray-200 {
+    background-color: $gray-200;
+}
+
+.bg-gray-300 {
+    background-color: $gray-300;
+}
+
+.text-gray-600 {
+    color: $gray-600;
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+}
+
+.clear {
+    clear: both;
+}
+
+.nav-bar {
+    width: 100%;
+    padding: 15px 0;
+    background-color: $primary;
+    color: $white;
+
+    .username {
+        float: right;
+    }
+}
+
+.form-group-default {
+    width: calc(100% - 20px);
+    height: 50px;
+    background-color: $gray-100;
+    padding: 10px;
+    box-sizing: content-box;
+    border-radius: 6px;
+    transition: background-color .3s linear;
+    -ms-transition: background-color .3s linear;
+    -moz-transition: background-color .3s linear;
+    -webkit-transition: background-color .3s linear;
+
+
+    &:focus-within {
+        background-color: $gray-200;
+    }
+
+    .form-icon {
+        display: block;
+        width: 50px;
+        line-height: 50px;
+        font-size: 24px;
+        text-align: center;
+        height: 100%;
+        float: left;
+        color: $gray-500;
+    }
+
+    .form-area {
+        width: calc(100% - 50px);
+        height: 100%;
+        display: block;
+        float: left;
+
+        label {
+            width: 100%;
+            height: 15px;
+            display: block;
+            font-size: 12px;
+            font-weight: 500;
+            color: $gray-500;
+            margin: 0;
+        }
+
+        input {
+            background: none;
+            height: calc(100% - 15px);
+            width: 100%;
+            display: block;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+    }
+}
+
+.other-auth {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+
+
+    a {
+        color: $gray-600;
+        text-decoration: none;
+    }
+}
+
+body.auth {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+
+    .login-avatar {
+        width: 100%;
+        display: block;
+
+        img {
+            display: block;
+            height: 100px;
+            width: 100px;
+            margin: 0 auto;
+        }
+    }
+
+    h1 {
+        font-size: 31px;
+        font-weight: 400;
+        font-family: $poppins;
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    form {
+        margin-top: auto;
+
+        .button-action {
+            button {
+                margin-right: 10px;
+            }
+        }
+
+        @media (max-width: 325px) {
+            .button-action {
+                .btn {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+        }
+    }
+}
+
+@import "desktop";
