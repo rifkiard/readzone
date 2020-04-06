@@ -5,6 +5,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import "../plugins/remixicon/fonts/remixicon.css";
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -10565,6 +10566,71 @@ label {
   clear: both;
 }
 
+.share-modal {
+  max-width: 95%;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px 15px 0 15px;
+  z-index: 2004;
+}
+.share-modal .share-title {
+  margin: 0 0 15px 0;
+  padding: 0 0 15px 0;
+  font-size: 14px;
+  font-family: "poppins-semibold";
+}
+.share-modal .share-menu {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.share-modal .share-menu .share-menu-item {
+  display: block;
+  float: left;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 10px 10px 10px;
+  color: #fff;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 21px;
+}
+.share-modal .share-menu .share-menu-item.clipboard {
+  background-color: #adb5bd;
+}
+.share-modal .share-menu .share-menu-item.whatsapp {
+  background-color: #25D366;
+}
+.share-modal .share-menu .share-menu-item.instagram {
+  background-color: #dd4f4f;
+}
+.share-modal .share-menu .share-menu-item.twitter {
+  background-color: #00ACEE;
+}
+.share-modal .share-menu .share-menu-item.facebook {
+  background-color: #3B5998;
+}
+.share-modal .share-menu .share-menu-item.line {
+  background-color: #009B3A;
+}
+
+.close-share-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2003;
+}
+
 .sidebar {
   height: 100%;
   width: 280px;
@@ -10586,6 +10652,7 @@ label {
 }
 .sidebar .sidebar-header .logo {
   float: left;
+  font-family: "poppins-semibold";
 }
 .sidebar .sidebar-header .close-sidebar-toggle {
   float: right;
@@ -10621,7 +10688,7 @@ label {
   padding: 0 15px;
   margin: 0;
   list-style: none;
-  height: calc(100% - 65px - 153px - 29px);
+  height: calc(100% - 65px - 153px - 27px);
   overflow-y: scroll;
 }
 .sidebar ul.menu::-webkit-scrollbar {
@@ -10631,7 +10698,7 @@ label {
   background: #f5f5f5;
 }
 .sidebar ul.menu::-webkit-scrollbar-thumb {
-  background: #dddddd;
+  background: rgba(55, 66, 250, 0.5);
 }
 .sidebar ul.menu li a {
   display: inline-block;
@@ -10654,15 +10721,15 @@ label {
   bottom: 0;
   left: 0;
   text-align: center;
-  font-size: 12px;
-  padding: 5px;
+  font-size: 11px;
+  padding: 5px 0;
 }
 
 .close-sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
+  height: 100%;
   right: 0;
   display: none;
   background-color: rgba(0, 0, 0, 0.2);
