@@ -10566,6 +10566,35 @@ label {
   clear: both;
 }
 
+.preload {
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+.preload .spin {
+  height: 48px;
+  width: 48px;
+  position: fixed;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  border-radius: 50%;
+  border: 5px solid #3742fa;
+  border-top-color: transparent;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .share-modal {
   max-width: 95%;
   position: fixed;
@@ -10610,19 +10639,19 @@ label {
   background-color: #adb5bd;
 }
 .share-modal .share-menu .share-menu-item.whatsapp {
-  background-color: #25D366;
+  background-color: #25d366;
 }
 .share-modal .share-menu .share-menu-item.instagram {
   background-color: #dd4f4f;
 }
 .share-modal .share-menu .share-menu-item.twitter {
-  background-color: #00ACEE;
+  background-color: #00acee;
 }
 .share-modal .share-menu .share-menu-item.facebook {
-  background-color: #3B5998;
+  background-color: #3b5998;
 }
 .share-modal .share-menu .share-menu-item.line {
-  background-color: #009B3A;
+  background-color: #009b3a;
 }
 
 .close-share-modal {
@@ -10771,8 +10800,9 @@ label {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 26;
+  z-index: 25;
   width: 100%;
+  background-color: #fff;
 }
 .bottom-bar .menu {
   width: calc(100% / 5);
@@ -10799,6 +10829,7 @@ label {
 }
 .bottom-bar .menu.plus {
   position: relative;
+  z-index: 26;
 }
 .bottom-bar .menu.plus a {
   height: 60px;
@@ -10812,6 +10843,7 @@ label {
   font-weight: 100;
   color: #fff;
   transition: 0.3s;
+  z-index: 26;
 }
 .bottom-bar .menu.plus a .icon {
   font-size: 28px;
@@ -10825,8 +10857,8 @@ label {
   position: fixed;
   bottom: -502.5px;
   left: calc(50% - 25px);
-  z-index: 25;
-  transition: 0.7s;
+  z-index: 24;
+  transition: 0.5s;
 }
 .modal-menu-plus.active {
   bottom: 102.5px;

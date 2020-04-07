@@ -1,3 +1,7 @@
+$(window).on('load', function () {
+    $('.preload').fadeOut();
+});
+
 $(function () {
 
     // Sidebar
