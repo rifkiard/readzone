@@ -20,7 +20,7 @@ body.dark {
 
         .share-menu {
             .share-menu-item {
-                color: $dark;
+                color: $white;
             }
         }
     }
@@ -104,6 +104,14 @@ body.dark {
                 background-color: $dark;
 
             }
+        }
+    }
+
+    .content-box {
+        .content-box-item {
+            background-color: $dark;
+            color: $white;
+            border: 1px solid $gray-900;
         }
     }
 }
