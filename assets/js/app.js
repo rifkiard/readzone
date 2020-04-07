@@ -3,7 +3,20 @@ $(window).on('load', function () {
 });
 
 $(function () {
+    if ($('.theme-toggle input[type="checkbox"]').is(":checked")) {
+        $('body').removeClass('light');
+        $('body').addClass('dark');
+    }
 
+    $('body').on('change', '.theme-toggle input[type="checkbox"]', function () {
+        if ($(this).is(':checked')) {
+            $('body').removeClass('light');
+            $('body').addClass('dark');
+        } else {
+            $('body').addClass('light');
+            $('body').removeClass('dark');
+        }
+    });
     // Sidebar
     $('body').on('click', '.sidebar-toggle, .close-sidebar, .close-sidebar-toggle', function () {
         if ($('.sidebar').hasClass('active')) {

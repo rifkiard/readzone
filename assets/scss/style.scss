@@ -1,8 +1,9 @@
 $primary: #3742fa;
+$dark : #121212;
 $poppins-semibold: "poppins-semibold";
 $poppins: "poppins";
 
-$theme-colors: (primary: $primary);
+$theme-colors: (primary: $primary, dark: $dark);
 $fa-font-path: "../fonts/fontawesome";
 
 @import "../plugins/bootstrap4/scss/bootstrap";
@@ -19,11 +20,19 @@ $fa-font-path: "../fonts/fontawesome";
   src: url("../fonts/poppins/Poppins-SemiBold.ttf");
 }
 
+* {
+
+  -webkit-transition: background-color .3s, color 0s;
+  -moz-transition: background-color .3s, color 0s;
+  -o-transition: background-color .3s, color 0s;
+  -ms-transition: background-color .3s, color 0s;
+  transition: background-color .3s, color 0s;
+}
+
 body {
   font-family: "poppins", sans-serif;
   width: 100%;
   min-height: 100vh;
-  background-color: $white;
 }
 
 label {
@@ -36,21 +45,21 @@ label {
   padding-right: 20px;
 }
 
-.bg-gray-100 {
-  background-color: $gray-100;
-}
+// .bg-gray-100 {
+//   background-color: $gray-100;
+// }
 
-.bg-gray-200 {
-  background-color: $gray-200;
-}
+// .bg-gray-200 {
+//   background-color: $gray-200;
+// }
 
-.bg-gray-300 {
-  background-color: $gray-300;
-}
+// .bg-gray-300 {
+//   background-color: $gray-300;
+// }
 
-.text-gray-600 {
-  color: $gray-600;
-}
+// .text-gray-600 {
+//   color: $gray-600;
+// }
 
 .wrapper {
   width: 90%;
@@ -68,7 +77,7 @@ label {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: $white;
+  // background-color: $white;
 
   .spin {
     height: 48px;
@@ -77,7 +86,7 @@ label {
     top: calc(50% - 24px);
     left: calc(50% - 24px);
     border-radius: 50%;
-    border: 5px solid $primary;
+    // border: 5px solid $primary;
     border-top-color: transparent;
 
     animation: rotate 1s linear infinite;
@@ -100,7 +109,7 @@ label {
   bottom: -300px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: $white;
+  // background-color: $white;
   border-radius: 8px;
   padding: 15px 15px 0 15px;
   z-index: 30;
@@ -129,7 +138,7 @@ label {
       text-decoration: none;
       text-align: center;
       margin: 0 5px 15px 5px;
-      color: $white;
+      // color: $white;
       height: 40px;
       width: 40px;
       line-height: 40px;
@@ -178,7 +187,7 @@ label {
   height: 100%;
   width: 280px;
   padding: 0;
-  background-color: $white;
+  // background-color: $white;
   position: fixed;
   top: 0;
   left: -290px;
@@ -208,6 +217,46 @@ label {
 
   .sidebar-profile {
     padding: 15px;
+    position: relative;
+
+    .theme-toggle {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+
+      input {
+        opacity: 0;
+      }
+
+      input:checked+label::after {
+        content: "\eef8";
+        left: 25px;
+      }
+
+      label {
+        height: 25px;
+        width: 50px;
+        border-radius: 17.5px;
+        position: relative;
+        cursor: pointer;
+        transition: .3s;
+
+        &::after {
+          font-family: 'remixicon' !important;
+          text-align: center;
+          line-height: 25px;
+          transition: .3s;
+          content: "\f105";
+          height: 25px;
+          width: 25px;
+          border-radius: 50%;
+          background-color: $gray-500;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
 
     .image {
       height: 60px;
@@ -247,10 +296,6 @@ label {
       width: 5px;
     }
 
-    &::-webkit-scrollbar-track {
-      background: #f5f5f5;
-    }
-
     &::-webkit-scrollbar-thumb {
       background: rgba($color: $primary, $alpha: 0.5);
     }
@@ -258,7 +303,7 @@ label {
     li a {
       display: inline-block;
       text-decoration: none;
-      color: $black;
+      // color: $black;
       padding: 15px 0;
       width: 100%;
       text-transform: capitalize;
@@ -298,7 +343,7 @@ label {
 .nav-bar {
   width: 100%;
   padding: 10px 0;
-  background-color: $white;
+  // background-color: $white;
   color: $black;
   position: fixed;
   top: 0;
@@ -316,7 +361,7 @@ label {
     font-size: 21px;
     cursor: pointer;
     text-decoration: none;
-    color: $black;
+    // color: $black;
   }
 
   .logo {
@@ -330,8 +375,7 @@ label {
   left: 0;
   z-index: 25;
   width: 100%;
-
-  background-color: $white;
+  // background-color: $white;
 
   .menu {
     width: calc(100% / 5);
@@ -344,7 +388,7 @@ label {
 
     a {
       display: inline;
-      color: $black;
+      // color: $black;
       text-decoration: none;
       font-family: $poppins-semibold;
       line-height: 1.2;
@@ -355,9 +399,9 @@ label {
       }
     }
 
-    &.active a {
-      color: $primary;
-    }
+    // &.active a {
+    // color: $primary;
+    // }
 
     &.plus {
       position: relative;
@@ -367,13 +411,13 @@ label {
         height: 60px;
         width: 60px;
         border-radius: 50%;
-        background-color: $primary;
+        // background-color: $primary;
         position: absolute;
         top: -30px;
         left: calc(50% - 30px);
         line-height: 60px;
         font-weight: 100;
-        color: $white;
+        // color: $white;
         transition: 0.3s;
         z-index: 26;
 
@@ -412,7 +456,7 @@ label {
       a {
         display: block;
         text-decoration: none;
-        color: $white;
+        // color: $white;
         height: 50px;
 
         .icon {
@@ -421,14 +465,14 @@ label {
           width: 50px;
           line-height: 50px;
           text-align: center;
-          background-color: $primary;
+          // background-color: $primary;
           border-radius: 50%;
           font-size: 21px;
         }
 
         .menu-title {
           display: inline-block;
-          color: $black;
+          // color: $black;
           padding: 5px 10px;
           margin: 0 0 0 10px;
           border-radius: 8px;
@@ -501,3 +545,5 @@ label {
 }
 
 @import "auth";
+@import "dark";
+@import "light";

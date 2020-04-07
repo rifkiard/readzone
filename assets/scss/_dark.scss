@@ -1,0 +1,109 @@
+body.dark {
+    background-color: $black;
+    color: $white;
+
+    .border-bottom {
+        border-color: $dark;
+    }
+
+    .preload {
+        background-color: $dark;
+
+        .spin {
+            border: 5px solid $primary;
+            border-top-color: transparent;
+        }
+    }
+
+    .share-modal {
+        background-color: $dark;
+
+        .share-menu {
+            .share-menu-item {
+                color: $dark;
+            }
+        }
+    }
+
+    .sidebar {
+        background-color: $dark;
+
+        .sidebar-profile {
+            border-bottom: 2px solid $black;
+
+            .theme-toggle {
+                label {
+                    background-color: $dark;
+                    border: 1px solid $gray-500;
+                    box-sizing: content-box;
+
+                    &::after {
+                        background-color: $white;
+                        color: $black;
+                    }
+                }
+            }
+        }
+
+        ul.menu {
+            &::-webkit-scrollbar-track {
+                background: $dark;
+            }
+
+            li a {
+                color: $white;
+            }
+        }
+
+        .sidebar-footer {
+            border-top: 2px solid $black;
+        }
+    }
+
+    .nav-bar {
+        background-color: $dark;
+
+        .sidebar-toggle,
+        .shop-toggle,
+        .logo {
+            color: $white;
+        }
+    }
+
+    .bottom-bar {
+        background-color: $dark;
+
+        .menu {
+            a {
+                color: $white;
+            }
+
+            &.active a {
+                color: $primary;
+            }
+
+            &.plus {
+                a {
+                    background-color: $primary;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .modal-menu-plus {
+        ul li a {
+            color: $white;
+
+            .icon {
+                background-color: $primary;
+            }
+
+            .menu-title {
+                color: $white;
+                background-color: $dark;
+
+            }
+        }
+    }
+}
