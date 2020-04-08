@@ -333,7 +333,7 @@ i i {
     padding: 0 15px;
     margin: 0;
     list-style: none;
-    height: calc(100% - 65px - 153px - 27px);
+    height: calc(100% - 64px - 159px - 28px);
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
@@ -587,6 +587,7 @@ i i {
     padding: 15px;
     box-sizing: border-box;
     margin: 0 0 15px 0;
+    cursor: pointer;
 
     .profile-image {
       float: left;
@@ -604,6 +605,16 @@ i i {
 
         .verified {
           color: $primary;
+        }
+      }
+
+      .image {
+        width: 100%;
+        margin: 0 0 15px 0;
+
+        img {
+          width: 100%;
+          border-radius: 8px;
         }
       }
 
@@ -640,12 +651,20 @@ i i {
 }
 
 @include media-breakpoint-up(md) {
+  .wrapper {
+    width: 85%;
+  }
+
   .content-box {
     column-count: 2;
   }
 }
 
 @include media-breakpoint-up(lg) {
+  .wrapper {
+    width: 80%;
+  }
+
   .content-box {
     column-count: 3;
   }

@@ -10801,7 +10801,7 @@ i i {
   padding: 0 15px;
   margin: 0;
   list-style: none;
-  height: calc(100% - 65px - 153px - 27px);
+  height: calc(100% - 64px - 159px - 28px);
   overflow-y: scroll;
 }
 .sidebar ul.menu::-webkit-scrollbar {
@@ -11020,6 +11020,7 @@ i i {
   padding: 15px;
   box-sizing: border-box;
   margin: 0 0 15px 0;
+  cursor: pointer;
 }
 .content-box .content-box-item .profile-image {
   float: left;
@@ -11036,6 +11037,14 @@ i i {
 }
 .content-box .content-box-item .content .username .verified {
   color: #3742fa;
+}
+.content-box .content-box-item .content .image {
+  width: 100%;
+  margin: 0 0 15px 0;
+}
+.content-box .content-box-item .content .image img {
+  width: 100%;
+  border-radius: 8px;
 }
 .content-box .content-box-item .content .post {
   font-size: 14px;
@@ -11063,11 +11072,19 @@ i i {
   }
 }
 @media (min-width: 768px) {
+  .wrapper {
+    width: 85%;
+  }
+
   .content-box {
     column-count: 2;
   }
 }
 @media (min-width: 992px) {
+  .wrapper {
+    width: 80%;
+  }
+
   .content-box {
     column-count: 3;
   }

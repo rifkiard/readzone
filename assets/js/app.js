@@ -48,4 +48,8 @@ $(function () {
             $(this).addClass('active');
         }
     });
+
+    $("body").on("click", ".content-box-item", function () {
+        alert('dianya ga peduli njr :(');
+    });
 });
