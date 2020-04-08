@@ -2,6 +2,10 @@ body.dark {
     background-color: $black;
     color: $white;
 
+    i i {
+        text-shadow: -2px -2px 0 $dark, 2px -2px 0 $dark, -2px 2px 0 $dark, 2px 2px $dark;
+    }
+
     .border-bottom {
         border-color: $dark;
     }
@@ -17,6 +21,10 @@ body.dark {
 
     .share-modal {
         background-color: $dark;
+
+        .share-title {
+            border-bottom: 1px solid $black;
+        }
 
         .share-menu {
             .share-menu-item {
@@ -46,9 +54,6 @@ body.dark {
         }
 
         ul.menu {
-            &::-webkit-scrollbar-track {
-                background: $dark;
-            }
 
             li a {
                 color: $white;

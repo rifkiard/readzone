@@ -1,9 +1,10 @@
 $primary: #3742fa;
-$dark : #121212;
+$dark: #121212;
 $poppins-semibold: "poppins-semibold";
 $poppins: "poppins";
 
-$theme-colors: (primary: $primary, dark: $dark);
+$theme-colors: (primary: $primary,
+  dark: $dark);
 $fa-font-path: "../fonts/fontawesome";
 
 @import "../plugins/bootstrap4/scss/bootstrap";
@@ -21,12 +22,11 @@ $fa-font-path: "../fonts/fontawesome";
 }
 
 * {
-
-  -webkit-transition: background-color .3s, color 0s;
-  -moz-transition: background-color .3s, color 0s;
-  -o-transition: background-color .3s, color 0s;
-  -ms-transition: background-color .3s, color 0s;
-  transition: background-color .3s, color 0s;
+  -webkit-transition: background-color 0.3s, color 0s;
+  -moz-transition: background-color 0.3s, color 0s;
+  -o-transition: background-color 0.3s, color 0s;
+  -ms-transition: background-color 0.3s, color 0s;
+  transition: background-color 0.3s, color 0s;
 }
 
 body {
@@ -45,21 +45,32 @@ label {
   padding-right: 20px;
 }
 
-// .bg-gray-100 {
-//   background-color: $gray-100;
-// }
+.bg-gray-100 {
+  background-color: $gray-100;
+}
 
-// .bg-gray-200 {
-//   background-color: $gray-200;
-// }
+.bg-gray-200 {
+  background-color: $gray-200;
+}
 
-// .bg-gray-300 {
-//   background-color: $gray-300;
-// }
+.bg-gray-300 {
+  background-color: $gray-300;
+}
 
-// .text-gray-600 {
-//   color: $gray-600;
-// }
+.text-gray-600 {
+  color: $gray-600;
+}
+
+i {
+  position: relative;
+}
+
+i i {
+  font-size: 40%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 .wrapper {
   width: 90%;
@@ -68,6 +79,32 @@ label {
 
 .clear {
   clear: both;
+}
+
+.profile-image-inner {
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background-color: $primary;
+  // font-family: $poppins-semibold;
+  text-transform: uppercase;
+  color: $white;
+
+  img {
+    height: 100%;
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.box-40 {
+  height: 40px;
+  width: 40px;
 }
 
 .navbar-offset {
@@ -117,7 +154,6 @@ label {
   bottom: -300px;
   left: 50%;
   transform: translateX(-50%);
-  // background-color: $white;
   border-radius: 8px;
   padding: 15px 15px 0 15px;
   z-index: 30;
@@ -247,13 +283,13 @@ label {
         border-radius: 17.5px;
         position: relative;
         cursor: pointer;
-        transition: .3s;
+        transition: 0.3s;
 
         &::after {
-          font-family: 'remixicon' !important;
+          font-family: "remixicon" !important;
           text-align: center;
           line-height: 25px;
-          transition: .3s;
+          transition: 0.3s;
           content: "\f105";
           height: 25px;
           width: 25px;
@@ -305,7 +341,7 @@ label {
     }
 
     &::-webkit-scrollbar-thumb {
-      background: rgba($color: $primary, $alpha: 0.5);
+      background: $primary;
     }
 
     li a {
@@ -383,7 +419,6 @@ label {
   left: 0;
   z-index: 25;
   width: 100%;
-  // background-color: $white;
 
   .menu {
     width: calc(100% / 5);
@@ -392,11 +427,10 @@ label {
     margin: 0;
     padding: 10px 0;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
 
     a {
       display: inline;
-      // color: $black;
       text-decoration: none;
       font-family: $poppins-semibold;
       line-height: 1.2;
@@ -406,10 +440,6 @@ label {
         font-size: 24px;
       }
     }
-
-    // &.active a {
-    // color: $primary;
-    // }
 
     &.plus {
       position: relative;
@@ -558,22 +588,9 @@ label {
     box-sizing: border-box;
     margin: 0 0 15px 0;
 
-
     .profile-image {
       float: left;
       width: 55px;
-
-      .profile-image-inner {
-        width: 40px;
-        height: 40px;
-        margin: 0 15px 0 0;
-        border-radius: 50%;
-        overflow: hidden;
-
-        img {
-          height: 100%;
-        }
-      }
     }
 
     .content {
@@ -594,22 +611,22 @@ label {
         font-size: 14px;
         margin: 0;
       }
-    }
 
-    .footer {
-      margin: 15px 0 0 0;
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
+      .footer {
+        margin: 15px 0 0 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
 
-      .footer-item {
-        font-size: 14px;
-        text-decoration: none;
-        margin-left: 15px;
-
-        span {
+        .footer-item {
           font-size: 14px;
-          margin-left: 5px;
+          text-decoration: none;
+          cursor: pointer;
+
+          span {
+            font-size: 14px;
+            margin-left: 5px;
+          }
         }
       }
     }
