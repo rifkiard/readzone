@@ -11033,10 +11033,15 @@ i i {
 .content-box .content-box-item .content .username {
   font-family: "poppins-semibold";
   font-size: 14px;
-  margin: 0 0 15px 0;
+  margin: 0;
 }
 .content-box .content-box-item .content .username .verified {
   color: #3742fa;
+  margin: 0 0 0 5px;
+}
+.content-box .content-box-item .content .date {
+  font-size: 12px;
+  margin: 0 0 15px 0;
 }
 .content-box .content-box-item .content .image {
   width: 100%;
@@ -11049,6 +11054,42 @@ i i {
 .content-box .content-box-item .content .post {
   font-size: 14px;
   margin: 0;
+}
+.content-box .content-box-item .content .book .book-option {
+  width: 100%;
+  font-family: "poppins-semibold";
+  font-size: 14px;
+  margin: 0 0 15px 0;
+  color: #3742fa;
+}
+.content-box .content-box-item .content .book .cover {
+  width: calc(45% - 15px);
+  float: left;
+  margin: 0 15px 0 0;
+}
+.content-box .content-box-item .content .book .cover img {
+  width: 100%;
+}
+.content-box .content-box-item .content .book .description {
+  width: 55%;
+  float: left;
+}
+.content-box .content-box-item .content .book .description .book-title {
+  font-family: "poppins-semibold";
+  font-size: 14px;
+  margin: 0 0 15px 0;
+}
+.content-box .content-box-item .content .book .description .book-synopsis {
+  font-size: 12px;
+  margin: 0 0 15px 0;
+}
+.content-box .content-box-item .content .book .description .book-specification {
+  font-size: 14px;
+  margin: 0;
+}
+.content-box .content-box-item .content .book .description .book-specification .book-specification-item {
+  display: block;
+  width: 100%;
 }
 .content-box .content-box-item .content .footer {
   margin: 15px 0 0 0;

@@ -601,11 +601,17 @@ i i {
       .username {
         font-family: $poppins-semibold;
         font-size: 14px;
-        margin: 0 0 15px 0;
+        margin: 0;
 
         .verified {
           color: $primary;
+          margin: 0 0 0 5px;
         }
+      }
+
+      .date {
+        font-size: 12px;
+        margin: 0 0 15px 0;
       }
 
       .image {
@@ -621,6 +627,52 @@ i i {
       .post {
         font-size: 14px;
         margin: 0;
+      }
+
+      .book {
+        .book-option {
+          width: 100%;
+          font-family: $poppins-semibold;
+          font-size: 14px;
+          margin: 0 0 15px 0;
+          color: $primary;
+        }
+
+        .cover {
+          width: calc(45% - 15px);
+          float: left;
+          margin: 0 15px 0 0;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .description {
+          width: 55%;
+          float: left;
+
+          .book-title {
+            font-family: $poppins-semibold;
+            font-size: 14px;
+            margin: 0 0 15px 0;
+          }
+
+          .book-synopsis {
+            font-size: 12px;
+            margin: 0 0 15px 0;
+          }
+
+          .book-specification {
+            font-size: 14px;
+            margin: 0;
+
+            .book-specification-item {
+              display: block;
+              width: 100%;
+            }
+          }
+        }
       }
 
       .footer {
